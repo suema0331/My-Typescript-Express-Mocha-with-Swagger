@@ -19,11 +19,6 @@ app.use((_, res, next) => {
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// host test input data
-app.use("/static", express.static("input"));
-// TODO separate server to main application clean
-// focus on only reading and evaluating
-
 // GET /evaluation
 app.use("/evaluation", evaluation);
 

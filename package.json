@@ -6,6 +6,7 @@
   "scripts": {
     "start": "ts-node src/index.ts",
     "start:live": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts",
+    "start:liveFileServer": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' staticFileServer/index.ts",
     "build": "tsc -p ."
   },
   "keywords": [],
