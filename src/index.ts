@@ -1,4 +1,6 @@
 import express from "express";
+import swaggerUi from "swagger-ui-express";
+import swaggerJSDoc from "swagger-jsdoc";
 import evaluation from "./router/evaluation";
 
 const app: express.Express = express();
@@ -24,6 +26,27 @@ app.use("/static", express.static("input"));
 
 // GET /evaluation
 app.use("/evaluation", evaluation);
+
+if (app.get("env") === "development") {
+  // Swagger
+  const options = {
+    swaggerDefinition: {
+      openapi: "3.0.0",
+      info: {
+        title: "Express & TypeScript Evaluation",
+        version: "1.0.0",
+        description:
+          "calculate some statistics from given input data about political speeches",
+      },
+    },
+    apis: ["./src/router/**/*.ts"],
+  };
+  app.use(
+    "/api-docs",
+    swaggerUi.serve,
+    swaggerUi.setup(swaggerJSDoc(options), { explorer: true })
+  );
+}
 
 // API server start
 app.listen(3000, () => {

@@ -24,6 +24,65 @@ interface UrlRequest extends Request {
 
 const router: express.Router = express.Router();
 
+/**
+ * @swagger
+ * openapi: 3.0.3
+ * info:
+ *   title: Political Speeches
+ *   description: The goal of this exercise is to calculate some statistics from given input data about political speeches.
+ *   termsOfService: http://swagger.io/terms/
+ *   license:
+ *     name: Apache 2.0
+ *     url: http://www.apache.org/licenses/LICENSE-2.0.html
+ *   version: 1.0.0
+ * servers:
+ *   - url: http://localhost:3000
+ * tags:
+ *   - name: evaluation
+ *     description: Calculate some statistics
+ * paths:
+ *   /evaluation:
+ *     get:
+ *       tags:
+ *         - evaluation
+ *       summary: Calculate some statistics from given input data URL in query parameters
+ *       description: Multiple URLs can be provided (http and https) via query parameters at the path.
+ *       operationId: evaluation
+ *       parameters:
+ *         - name: url
+ *           in: query
+ *           description: input data URLs
+ *           required: true
+ *           schema:
+ *             type: array
+ *             items:
+ *               type: string
+ *       responses:
+ *         '200':
+ *           description: Returns answers of political questions
+ *           content:
+ *             application/json:
+ *               schema:
+ *                 type: object
+ *                 items:
+ *                   $ref: '#/components/schemas/Answer'
+ *
+ * components:
+ *   schemas:
+ *     Answer:
+ *       type: object
+ *       properties:
+ *         mostSpeeches:
+ *           type: string
+ *           example: 'Caesare Collins'
+ *         mostSecurity:
+ *           type: string
+ *           example: 'Caesare Collins'
+ *         leastWordy:
+ *           type: string
+ *           example: 'Caesare Collins'
+ */
+
 router.get("/", async (req: UrlRequest, res: Response) => {
   console.log("#####################");
   console.log("Evaluation start!");
