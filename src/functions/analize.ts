@@ -1,7 +1,7 @@
 import { Speech } from "./getData";
 
 // 1. Which politician gave the most speeches in 2013?
-exports.analizeMostSpeeches = function (speeches: Speech[], year: string) {
+export function analizeMostSpeeches(speeches: Speech[], year: string) {
   const map = new Map();
   speeches.forEach((speech) => {
     const speechYear = speech.Date.split("-");
@@ -25,10 +25,10 @@ exports.analizeMostSpeeches = function (speeches: Speech[], year: string) {
   });
   if (!mostSpeeches || mostSpeeches.length > 1) return null;
   return mostSpeeches[0];
-};
+}
 
 // 2. Which politician gave the most speeches on the topic „Internal Security"?
-exports.analizeMostSecurity = function (speeches: Speech[], topic: string) {
+export function analizeMostSecurity(speeches: Speech[], topic: string) {
   const map = new Map();
   speeches.forEach((speech) => {
     const speechTopic = speech.Topic;
@@ -52,10 +52,10 @@ exports.analizeMostSecurity = function (speeches: Speech[], topic: string) {
   });
   if (!mostSecurities || mostSecurities.length > 1) return null;
   return mostSecurities[0];
-};
+}
 
 // 3. Which politician used the fewest words (in total)?
-exports.analizeLeastWordy = function (speeches: Speech[]) {
+export function analizeLeastWordy(speeches: Speech[]) {
   const map = new Map();
   speeches.forEach((speech) => {
     const words = Number(speech.Words);
@@ -79,4 +79,4 @@ exports.analizeLeastWordy = function (speeches: Speech[]) {
   });
   if (!leastWordies || leastWordies.length > 1) return null;
   return leastWordies[0];
-};
+}

@@ -1,12 +1,13 @@
 import express, { Request, Response } from "express";
-const path = require("path");
+import path from "path";
 const appRoot = path.resolve("./");
-const { fetchCsv, parseDataFromCsv } = require("../functions/getData");
-const {
+
+import { fetchCsv, parseDataFromCsv } from "../functions/getData";
+import {
   analizeMostSpeeches,
   analizeMostSecurity,
   analizeLeastWordy,
-} = require("../functions/analize");
+} from "../functions/analize";
 import { Speech } from "../functions/getData";
 
 type Answer = {
@@ -75,4 +76,4 @@ router.get("/", async (req: UrlRequest, res: Response) => {
   res.json(resJsons);
 });
 
-module.exports = router;
+export default router;

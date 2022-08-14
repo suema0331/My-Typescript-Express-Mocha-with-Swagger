@@ -1,10 +1,9 @@
-const fs = require("fs");
-const http = require("http");
-// const https = require("https");
-const url = require("url");
-const csv = require("csv-parse");
-const { parse } = require("csv-parse/sync");
-const { createObjectCsvWriter } = require("csv-writer");
+import fs from "fs";
+import http from "http";
+// import https from "https";
+import * as csv from "csv-parse";
+import { parse } from "csv-parse/sync";
+import { createObjectCsvWriter } from "csv-writer";
 
 export interface Speech {
   Speaker: string;
@@ -14,7 +13,7 @@ export interface Speech {
 }
 
 // 0. feth CSV
-exports.fetchCsv = function (sourcePath: string, outputPath: string) {
+export function fetchCsv(sourcePath: string, outputPath: string) {
   const speeches: Speech[] = [];
   return new Promise((resolve, reject) => {
     http
@@ -43,10 +42,10 @@ exports.fetchCsv = function (sourcePath: string, outputPath: string) {
       })
       .end();
   });
-};
+}
 
 // 1. download Csv
-async function downloadCsv(data: Speech[], outputPath: string) {
+export async function downloadCsv(data: Speech[], outputPath: string) {
   const csvWriter = await createObjectCsvWriter({
     path: outputPath,
     encoding: "utf8",
@@ -67,7 +66,7 @@ async function downloadCsv(data: Speech[], outputPath: string) {
 }
 
 // 2. read and parse data from saved csv
-exports.parseDataFromCsv = async function (path: string) {
+export async function parseDataFromCsv(path: string) {
   let speeches: Speech[] = [];
   try {
     const inputData = fs.readFileSync(path, { encoding: "utf8" });
@@ -83,4 +82,4 @@ exports.parseDataFromCsv = async function (path: string) {
     console.log(err);
   }
   return speeches;
-};
+}
