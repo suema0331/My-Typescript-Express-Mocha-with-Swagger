@@ -1,4 +1,4 @@
-# Typescriot Node Political Speeches
+# Typescriot Express Political Speeches
 
 This application computes several statistics from input data.
 An example of such a csv file can be found in staticFileServer (. /staticFileServer/input/csv/text1.csv).
@@ -17,12 +17,12 @@ The CSV file provided in these URLs is downloaded into the application (data/tex
 ## Technologies
 
 - TypeScript
-- ExpressJS
+- Express
 - NodeJS
 - nodemon
 - Swagger
-- chai
-- mocha
+- Chai
+- Mocha
 
 
 ## Quick Start
