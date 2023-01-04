@@ -113,7 +113,7 @@ router.get("/", async (req: UrlRequest, res: Response) => {
     console.log(`Read data: ${speeches.length} lines`);
 
     console.log("---------------------");
-    const mostSpeeches = analizeMostSpeeches(speeches, "2012");
+    const mostSpeeches = analizeMostSpeeches(speeches, "2013");
     console.log(`Answer1: ${mostSpeeches}`);
 
     console.log("---------------------");
