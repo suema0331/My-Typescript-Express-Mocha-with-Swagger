@@ -62,7 +62,7 @@ http://localhost:3000/evaluation?url=http://localhost:3001/static/csv/text1.csv&
 ## Installation
 
 ```
-git clone git@github.com:suema0331/typescript-express-testing.git && cd typescript-node-practice && yarn install
+git clone git@github.com:suema0331/typescript-node-practice.git && cd typescript-node-practice && yarn install
 ```
 
 ## Start the server
