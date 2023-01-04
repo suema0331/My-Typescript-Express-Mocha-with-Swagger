@@ -43,13 +43,13 @@ $ yarn run build
 
 ### `staticFileServer/input/csv`
 
-Please put the test data in ./input/csv. These data hosted by express at http://localhost:3001/static/csv/
+Please put the test data in `./input/csv`. These data hosted by express at http://localhost:3001/static/csv/
 
 ### `data`
 
-External csv files are downloaded in ./data
+External csv files are downloaded in `./data`.
 
-### Example API request
+### `Example API request`
 
 http://localhost:3000/evaluation?url=http://localhost:3001/static/csv/text1.csv
 
@@ -64,29 +64,27 @@ git clone git@github.com:suema0331/typescript-express-testing.git && cd typescri
 
 ## Start the server
 
-The API for this application is powered by the [ExpressJS](https://expressjs.com/) server, which uses [nodemon](https://nodemon.io/) instead of node to monitor the source code and automatically restarts the server when changes are made.
+The API for this application is powered by the [Express](https://expressjs.com/) server, which uses [nodemon](https://nodemon.io/) instead of node to monitor the source code and automatically restarts the server when changes are made.
 
-```
-# serve with hot reload at localhost:3000
-$ yarn run start:live
+```bash
+yarn run start:live
 ```
 
 To start the development static file server, run the following.
 
-```
-# static file server with hot reload at localhost:3001
-$ yarn run start:liveFileServer
+```bash
+yarn run start:liveFileServer
 ```
 
 ## Documentation
 
-For documentation purposes, I have created a RESTful API specification using [Swagger](https://swagger.io/). Once you start the development server, you can look at it, check the endpoint definitions from the http://localhost:3000/api-docs/ root, and verify them with the sample Parameters.
+For documentation purposes, I have created a RESTful API specification using [Swagger](https://swagger.io/). Once you start the development server, you can look at it, check the endpoint definitions from the http://localhost:3000/api-docs/ root, and verify them with the sample parameters.
 
 
 ## Testing
 
-This application uses mocha and chai for unit testing. The test files are listed in Typescript in the spec/ directory. (spec/evaluation.spec.ts)
+This application uses [Mocha](https://mochajs.org/) and [Chai](https://www.chaijs.com/) for unit testing. The test file are written in Typescript in the `spec/` directory. (`spec/evaluation.spec.ts`)
 
-```
-$ yarn test
+```bash
+yarn test
 ```
