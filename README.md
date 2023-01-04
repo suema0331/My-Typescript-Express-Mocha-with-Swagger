@@ -39,6 +39,9 @@ $ yarn run start:liveFileServer
 
 # build the project
 $ yarn run build
+
+# test the project
+$ yarn test
 ```
 
 ### `staticFileServer/input/csv`
