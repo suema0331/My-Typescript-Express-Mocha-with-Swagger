@@ -83,6 +83,12 @@ yarn run start:liveFileServer
 
 For documentation purposes, I have created a RESTful API specification using [Swagger](https://swagger.io/). Once you start the development server, you can look at it, check the endpoint definitions from the http://localhost:3000/api-docs/ root, and verify them with the sample parameters.
 
+```
+# Example parameters
+http://localhost:3001/static/csv/text1.csv
+http://localhost:3001/static/csv/text2.csv
+```
+
 
 ## Testing
 
